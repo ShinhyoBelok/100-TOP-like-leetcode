@@ -9,11 +9,13 @@ var generateParenthesis = function(n) {
       if (open < n) {
         str += '(';
         parenthesisComb(open + 1, close, str)
+        str = str.slice(0, str.length -1)
       }
       
       if (close < open) {
         str += ')';
         parenthesisComb(open, close + 1, str)
+        str = str.slice(0, str.length -1)
       }
     }
   };
